@@ -3,8 +3,8 @@ CC = g++
 LD = ld
 LDFLAGS = -lpthread -lwiringPi
 
-OBJ = ntc.o 
-BIN = ntc
+OBJ = ntc_sc.o 
+BIN = ntc_sc
 
 gpio: $(OBJ)
 	$(CC) $(CFLAGS) -o $(BIN) $(OBJ) $(LDFLAGS)

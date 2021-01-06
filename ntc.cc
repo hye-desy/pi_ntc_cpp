@@ -13,7 +13,7 @@
 #include <wiringPiSPI.h>
 
 using std::uint32_t;
-const std::vector<uint32_t> gpio{17, 27, 22};
+const std::vector<uint32_t> gpio{23, 24, 25};
 
 #define SLEEPTIME  5
 
@@ -102,9 +102,9 @@ void read_ntc(std::atomic_uchar &run){
 
     time_t timev;
 
-    while(run){
+    spiSetup(spiChannel);
 
-	spiSetup(spiChannel);
+    while(run){
 
 	if(i==0) std::cout<<"Measurement: "<<ntot<<std::endl;
 	std::cout<<"gpio: "<<gpio[i]<<std::endl;
